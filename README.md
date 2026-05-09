@@ -36,6 +36,11 @@
 
 Both services are deployed on **Vercel** — the backend runs as a serverless function, and the frontend is a statically optimized Next.js app.
 
+### 🧪 Demo Account (For Evaluators)
+You can log in to the live frontend immediately using this test account (or sign up for a new one):
+- **Email:** `demo@aura.com`
+- **Password:** `Password123!`
+
 ---
 
 ## ⚡ Tech Stack
