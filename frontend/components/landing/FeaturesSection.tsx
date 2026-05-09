@@ -10,7 +10,7 @@ const CLASSES_DATA = [
   {
     id: "digital",
     title: "Digital Coaching",
-    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop",
+    image: "/features/workout.png",
     aspectRatio: "aspect-[4/5]",
     parallaxSpeed: -50,
     marginTop: "mt-0 lg:mt-32",
@@ -18,7 +18,7 @@ const CLASSES_DATA = [
   {
     id: "group",
     title: "Group Training",
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?q=80&w=1470&auto=format&fit=crop",
+    image: "/features/community.png",
     aspectRatio: "aspect-[3/4]",
     parallaxSpeed: -120,
     marginTop: "mt-0 lg:mt-64",
@@ -26,7 +26,7 @@ const CLASSES_DATA = [
   {
     id: "outdoor",
     title: "Outdoor Classes",
-    image: "https://images.unsplash.com/photo-1517836357463-d25dfeac3438?q=80&w=1470&auto=format&fit=crop",
+    image: "/features/nutrition.png",
     aspectRatio: "aspect-[4/5]",
     parallaxSpeed: -80,
     marginTop: "mt-0 lg:mt-48",
@@ -34,7 +34,7 @@ const CLASSES_DATA = [
   {
     id: "personal",
     title: "Personal Training",
-    image: "https://images.unsplash.com/photo-1541534741688-6078c6bfb5c5?q=80&w=1469&auto=format&fit=crop",
+    image: "/features/analytics.png",
     aspectRatio: "aspect-[1/2]",
     parallaxSpeed: -200,
     marginTop: "mt-0",
@@ -65,7 +65,7 @@ export function FeaturesSection() {
 
           <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-0">
             <p className="max-w-sm text-sm font-medium text-muted-foreground lg:mt-4">
-              Whether you're looking to burn calories, build strength, increase flexibility, or find a moment of calm, we have the perfect class for you.
+              Whether you&apos;re looking to burn calories, build strength, increase flexibility, or find a moment of calm, we have the perfect class for you.
             </p>
             <h2 className="font-display text-7xl tracking-tighter text-foreground sm:text-8xl lg:text-[9rem] lg:-ml-32">
               For You
@@ -74,9 +74,9 @@ export function FeaturesSection() {
 
           {/* Centered Pill CTA */}
           <div className="mt-12 flex justify-start lg:absolute lg:left-1/2 lg:top-1/2 lg:mt-0 lg:-translate-x-1/2 lg:translate-y-full">
-            <button className="group flex h-14 items-center overflow-hidden rounded-full bg-foreground pl-8 pr-1.5 shadow-lg transition-transform hover:scale-[1.02] active:scale-[0.98]">
-              <span className="mr-6 text-sm font-semibold text-background">See All</span>
-              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-border text-foreground transition-all group-hover:bg-lime group-hover:text-black">
+            <button className="group flex h-14 items-center overflow-hidden rounded-full bg-card/50 backdrop-blur-xl border border-lime/30 pl-8 pr-1.5 shadow-[0_0_20px_rgba(204,255,0,0.1)] transition-all hover:scale-[1.02] hover:shadow-[0_0_30px_rgba(204,255,0,0.3)] hover:border-lime/60 active:scale-[0.98]">
+              <span className="mr-6 text-sm font-semibold text-white">See All</span>
+              <div className="flex h-11 w-11 items-center justify-center rounded-full bg-border text-white shadow-[0_0_10px_rgba(204,255,0,0)] transition-all group-hover:bg-lime group-hover:text-black group-hover:shadow-[0_0_15px_rgba(204,255,0,0.4)]">
                 <ArrowRight size={20} strokeWidth={2.5} className="transition-transform group-hover:-rotate-45" />
               </div>
             </button>
@@ -98,7 +98,7 @@ export function FeaturesSection() {
                 {/* Custom Masked Image */}
                 <div
                   className={cn(
-                    "relative w-full overflow-hidden rounded-[48px] bg-muted shadow-lg",
+                    "relative w-full overflow-hidden rounded-[48px] bg-muted/20 border border-border/50 shadow-[0_0_15px_rgba(0,0,0,0.5)] transition-shadow duration-500 group-hover:border-lime/50 group-hover:shadow-[0_0_30px_rgba(204,255,0,0.2)]",
                     card.aspectRatio
                   )}
                 >
@@ -118,7 +118,7 @@ export function FeaturesSection() {
                   <h3 className="font-display text-xl font-bold text-foreground">
                     {card.title}
                   </h3>
-                  <button className="flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background transition-all hover:scale-110 hover:bg-lime hover:text-black">
+                  <button className="flex h-12 w-12 items-center justify-center rounded-full bg-card backdrop-blur-xl border border-border/50 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-lime group-hover:text-black group-hover:border-lime group-hover:shadow-[0_0_20px_rgba(204,255,0,0.5)]">
                     <ArrowUpRight size={20} strokeWidth={2.5} />
                   </button>
                 </div>

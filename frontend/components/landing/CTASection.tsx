@@ -40,7 +40,7 @@ export function CTASection() {
       {/* Background Gradient with subtle motion */}
       <div className="absolute inset-0 -z-10 bg-black">
         <motion.div
-          className="absolute -top-24 -left-24 h-[500px] w-[500px] rounded-full bg-lime/20 blur-[120px]"
+          className="absolute -top-24 -left-24 h-[500px] w-[500px] rounded-full bg-lime/30 blur-[120px]"
           animate={{
             x: [0, 50, 0],
             y: [0, 30, 0],
@@ -52,7 +52,7 @@ export function CTASection() {
           }}
         />
         <motion.div
-          className="absolute -bottom-24 -right-24 h-[500px] w-[500px] rounded-full bg-lime/10 blur-[100px]"
+          className="absolute -bottom-24 -right-24 h-[500px] w-[500px] rounded-full bg-purple-500/30 blur-[120px]"
           animate={{
             x: [0, -30, 0],
             y: [0, -40, 0],
@@ -91,9 +91,9 @@ export function CTASection() {
                 type="email"
                 required
                 className={cn(
-                  "block w-full rounded-full border-0 bg-white/5 py-4 pl-12 pr-36 text-white shadow-sm ring-1 ring-inset ring-white/10",
-                  "focus:ring-2 focus:ring-inset focus:ring-lime sm:text-sm sm:leading-6 placeholder:text-zinc-500 transition-shadow",
-                  status === "error" && "ring-red-500 focus:ring-red-500",
+                  "block w-full rounded-full border border-white/10 bg-white/5 backdrop-blur-xl py-4 pl-12 pr-36 text-white shadow-[0_0_15px_rgba(0,0,0,0.5)] ring-0 outline-none",
+                  "focus:border-lime focus:shadow-[0_0_20px_rgba(204,255,0,0.5)] sm:text-sm sm:leading-6 placeholder:text-zinc-500 transition-all duration-300",
+                  status === "error" && "border-red-500 focus:border-red-500 focus:shadow-[0_0_20px_rgba(255,0,0,0.5)]",
                 )}
                 placeholder="Enter your email address"
                 value={email}
@@ -108,8 +108,8 @@ export function CTASection() {
                   type="submit"
                   disabled={status === "loading" || status === "success"}
                   className={cn(
-                    "flex items-center justify-center rounded-full bg-lime px-6 text-sm font-semibold text-black transition-all",
-                    "hover:brightness-110 active:scale-95 disabled:opacity-50 disabled:active:scale-100",
+                    "flex items-center justify-center rounded-full bg-lime px-6 text-sm font-semibold text-black shadow-[0_0_20px_rgba(204,255,0,0.4)] transition-all",
+                    "hover:shadow-[0_0_30px_rgba(204,255,0,0.6)] hover:scale-105 active:scale-95 disabled:opacity-50 disabled:active:scale-100",
                   )}
                 >
                   {status === "loading" ? (

@@ -64,7 +64,7 @@ function MonitorCard() {
         </h3>
       </div>
       
-      <div className="relative w-48 rounded-[24px] border border-border bg-card py-6 px-6 shadow-sm">
+      <div className="relative w-48 rounded-[24px] border border-border/50 bg-card/10 backdrop-blur-xl py-6 px-6 shadow-[0_0_20px_rgba(204,255,0,0.1)]">
         <ul className="flex flex-col gap-4">
           {items.map((item, i) => (
             <li
@@ -79,29 +79,10 @@ function MonitorCard() {
           ))}
         </ul>
 
-        {/* Liquid Tab Notch */}
-        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-[100%] h-[100px] w-[40px] group cursor-pointer">
-          {/* Mask to hide straight border line underneath */}
-          <div className="absolute left-[-2px] top-[1px] bottom-[1px] w-[4px] bg-card z-10" />
-          
-          {/* SVG Organic Curve */}
-          <svg
-            width="40"
-            height="100"
-            viewBox="0 0 40 100"
-            className="absolute left-[-1px] top-0 text-border fill-card"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M 0 0 C 20 0 40 20 40 50 C 40 80 20 100 0 100"
-              stroke="currentColor"
-              strokeWidth="1"
-            />
-          </svg>
-          
-          {/* Floating Action Button inside Notch */}
-          <div className="absolute left-1 top-1/2 -translate-y-1/2 h-10 w-10 rounded-full bg-foreground text-background flex items-center justify-center z-20 shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:bg-lime group-hover:text-black">
-            <ArrowUpRight size={18} strokeWidth={2.5} />
+        {/* Floating Action Button */}
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 group cursor-pointer z-20">
+          <div className="h-12 w-12 rounded-full bg-lime text-black flex items-center justify-center shadow-[0_0_15px_rgba(204,255,0,0.4)] transition-all duration-300 group-hover:scale-110 group-hover:shadow-[0_0_25px_rgba(204,255,0,0.6)]">
+            <ArrowUpRight size={20} strokeWidth={2.5} />
           </div>
         </div>
       </div>
@@ -112,7 +93,7 @@ function MonitorCard() {
 function StatBadge({ num, val, label }: { num: string; val: string; label: string }) {
   return (
     <motion.div variants={FADE_UP} className="flex flex-col gap-3">
-      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-foreground text-xs font-bold text-background">
+      <div className="flex h-8 w-8 items-center justify-center rounded-full bg-lime text-xs font-bold text-black shadow-[0_0_10px_rgba(204,255,0,0.5)]">
         {num}
       </div>
       <div>
@@ -127,8 +108,8 @@ function Headline() {
   return (
     <div className="flex flex-col gap-2 sm:gap-4 w-full">
       <motion.div variants={FADE_UP} className="flex items-center flex-wrap gap-4">
-        <h1 className="font-display text-5xl sm:text-7xl lg:text-[7.5rem] tracking-[-0.04em] text-foreground font-bold leading-none">
-          Today's workout
+        <h1 className="font-display text-5xl sm:text-7xl lg:text-[7.5rem] tracking-[-0.04em] text-white font-bold leading-none drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
+          Today&apos;s workout
         </h1>
         {/* <div className="relative h-14 w-32 sm:h-20 sm:w-48 lg:h-[100px] lg:w-64 overflow-hidden rounded-full bg-muted">
           <Image
@@ -148,7 +129,7 @@ function Headline() {
             className="object-cover grayscale hover:grayscale-0 transition-all duration-500"
           />
         </div> */}
-        <h1 className="font-display text-5xl sm:text-7xl lg:text-[7.5rem] tracking-[-0.04em] text-foreground font-bold leading-none">
+        <h1 className="font-display text-5xl sm:text-7xl lg:text-[7.5rem] tracking-[-0.04em] text-white font-bold leading-none drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
           is ready for you!
         </h1>
       </motion.div>
@@ -162,7 +143,7 @@ function HeroVisual() {
     <motion.div variants={FADE_UP} className="relative w-full h-[400px] sm:h-[500px] lg:h-[700px] mt-12 lg:mt-0">
       <div className="relative w-full h-full overflow-hidden rounded-[40px] sm:rounded-[64px] bg-muted shadow-2xl">
         <Image
-          src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?q=80&w=1470&auto=format&fit=crop"
+          src="/hero-athlete.png"
           alt="Athlete working out"
           fill
           priority
@@ -173,9 +154,9 @@ function HeroVisual() {
 
       {/* Pill CTA - Bottom Right */}
       <div className="absolute -bottom-6 right-4 lg:bottom-12 lg:-right-8 z-20">
-        <button onClick={() => router.push("/join")} className="group flex h-16 items-center overflow-hidden rounded-full bg-foreground pl-8 pr-2 shadow-2xl transition-transform hover:scale-[1.02] active:scale-[0.98]">
-          <span className="mr-6 text-base font-bold text-background">Start Now</span>
-          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-lime text-black transition-transform group-hover:-rotate-45">
+        <button onClick={() => router.push("/join")} className="group flex h-16 items-center overflow-hidden rounded-full bg-card/60 backdrop-blur-xl border border-lime/30 pl-8 pr-2 shadow-[0_0_30px_rgba(204,255,0,0.2)] transition-all hover:scale-[1.02] hover:shadow-[0_0_40px_rgba(204,255,0,0.4)] hover:border-lime/60 active:scale-[0.98]">
+          <span className="mr-6 text-base font-bold text-white">Start Now</span>
+          <div className="flex h-12 w-12 items-center justify-center rounded-full bg-lime text-black shadow-[0_0_15px_rgba(204,255,0,0.5)] transition-transform group-hover:-rotate-45">
             <ArrowRight size={20} strokeWidth={2.5} />
           </div>
         </button>
@@ -189,6 +170,10 @@ function HeroVisual() {
 export function Hero() {
   return (
     <section id="home" className="relative w-full overflow-hidden bg-background pt-32 pb-16 lg:pt-40 lg:pb-24">
+      {/* Subtle Neon Background Glows */}
+      <div className="absolute top-0 left-1/4 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-lime/10 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 right-0 h-[400px] w-[400px] translate-x-1/3 -translate-y-1/2 rounded-full bg-purple-500/10 blur-[120px] pointer-events-none" />
+
       <motion.div
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         variants={STAGGER}

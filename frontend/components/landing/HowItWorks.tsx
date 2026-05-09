@@ -46,6 +46,9 @@ const STAGGER = {
 export function HowItWorks() {
   return (
     <section className="relative w-full overflow-hidden bg-background py-24 lg:py-32">
+      {/* Subtle Neon Background Glows */}
+      <div className="absolute top-1/4 left-0 h-[400px] w-[400px] -translate-x-1/2 rounded-full bg-lime/10 blur-[100px] pointer-events-none" />
+      <div className="absolute bottom-0 right-0 h-[500px] w-[500px] translate-x-1/3 translate-y-1/3 rounded-full bg-purple-500/10 blur-[120px] pointer-events-none" />
       <motion.div
         className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8"
         variants={STAGGER}
@@ -61,7 +64,7 @@ export function HowItWorks() {
               How It
             </h2>
             <p className="max-w-sm text-sm font-medium text-muted-foreground ml-0 lg:ml-24">
-              Whether you're a beginner looking to kickstart your fitness journey or an experienced athlete aiming to reach new heights.
+              Whether you&apos;re a beginner looking to kickstart your fitness journey or an experienced athlete aiming to reach new heights.
             </p>
           </motion.div>
           <motion.div variants={FADE_UP} className="flex flex-col items-start lg:items-end gap-8 w-full lg:w-1/2 mt-0 lg:mt-24">
@@ -82,40 +85,15 @@ export function HowItWorks() {
               <motion.div
                 key={step.id}
                 variants={FADE_UP}
-                className="relative overflow-visible rounded-[32px] border border-border bg-card p-6 sm:p-8 pt-10 h-full flex flex-col group transition-shadow hover:shadow-xl"
+                className="relative overflow-visible rounded-[32px] border border-border/50 bg-card/10 backdrop-blur-xl p-6 sm:p-8 pt-10 h-full flex flex-col group transition-all hover:border-lime/50 hover:shadow-[0_0_30px_rgba(204,255,0,0.15)]"
               >
-                {/* Masking block to hide the default rounded border on top-right */}
-                <div className="absolute -right-[2px] -top-[2px] h-[66px] w-[66px] bg-background z-10" />
-                
-                {/* SVG Organic Cutout */}
-                <svg
-                  width="64"
-                  height="64"
-                  viewBox="0 0 64 64"
-                  className="absolute -right-[1px] -top-[1px] z-20 text-border"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  {/* Fill area connecting the card to the cutout */}
-                  <path
-                    d="M 0 0 C 32 0 32 32 32 32 C 32 64 64 64 64 64 L 0 64 Z"
-                    className="fill-card"
-                  />
-                  {/* The curved border stroke */}
-                  <path
-                    d="M 0 0 C 32 0 32 32 32 32 C 32 64 64 64 64 64"
-                    stroke="currentColor"
-                    strokeWidth="1"
-                    fill="none"
-                  />
-                </svg>
-
                 {/* Floating Arrow Button */}
-                <button className="absolute -right-2 -top-2 flex h-12 w-12 items-center justify-center rounded-full bg-foreground text-background shadow-md transition-transform duration-300 group-hover:scale-110 group-hover:bg-lime group-hover:text-black z-30">
+                <button className="absolute -right-2 -top-2 flex h-12 w-12 items-center justify-center rounded-full bg-card backdrop-blur-xl border border-border/50 text-white shadow-lg transition-all duration-300 group-hover:scale-110 group-hover:bg-lime group-hover:text-black group-hover:border-lime group-hover:shadow-[0_0_20px_rgba(204,255,0,0.5)] z-30">
                   <ArrowUpRight size={20} strokeWidth={2.5} />
                 </button>
 
                 {/* Card Content */}
-                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-muted/50 text-foreground mb-16 transition-colors group-hover:bg-lime/20 group-hover:text-lime">
+                <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-white/5 border border-white/10 text-white mb-16 transition-all duration-300 group-hover:bg-lime/20 group-hover:border-lime/50 group-hover:text-lime group-hover:shadow-[0_0_15px_rgba(204,255,0,0.3)]">
                   <Icon size={28} strokeWidth={1.5} />
                 </div>
                 
