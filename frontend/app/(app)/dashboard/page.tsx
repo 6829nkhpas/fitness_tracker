@@ -50,9 +50,9 @@ function DashboardSkeleton() {
 // ─── Quick Actions ───────────────────────────────────────────
 
 const ACTIONS = [
-  { name: "Start Workout", icon: Play, color: "bg-lime text-black border-transparent", hover: "hover:brightness-110" },
-  { name: "Log Meal", icon: Utensils, color: "bg-card text-foreground border-border", hover: "hover:bg-muted" },
-  { name: "View Progress", icon: ChartIcon, color: "bg-card text-foreground border-border", hover: "hover:bg-muted" },
+  { name: "Start Workout", icon: Play, color: "bg-lime text-black border-transparent shadow-[0_0_20px_rgba(204,255,0,0.4)]", hover: "hover:brightness-110 hover:shadow-[0_0_30px_rgba(204,255,0,0.6)]" },
+  { name: "Log Meal", icon: Utensils, color: "bg-card backdrop-blur-xl text-foreground border-border/50", hover: "hover:bg-white/5 hover:border-border" },
+  { name: "View Progress", icon: ChartIcon, color: "bg-card backdrop-blur-xl text-foreground border-border/50", hover: "hover:bg-white/5 hover:border-border" },
 ];
 
 function QuickActions() {

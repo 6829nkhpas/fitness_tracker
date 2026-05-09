@@ -30,12 +30,12 @@ export function WorkoutList() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className="flex h-full w-full flex-col rounded-2xl border border-border bg-card shadow-sm"
+      className="flex h-full w-full flex-col rounded-2xl border border-border/50 bg-card backdrop-blur-xl shadow-lg"
     >
       {/* Header */}
       <div className="border-b border-border p-6">
         <div className="flex items-center justify-between">
-          <h3 className="font-display text-lg font-semibold text-foreground">Today's Workout</h3>
+          <h3 className="font-display text-lg font-semibold text-foreground">Today&apos;s Workout</h3>
           <span className="flex items-center gap-1 text-xs font-medium text-muted-foreground">
             <Clock size={14} /> 45 min
           </span>
@@ -44,9 +44,9 @@ export function WorkoutList() {
         
         {/* Progress Bar */}
         <div className="mt-4 flex items-center gap-3">
-          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted">
+          <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-muted/50">
             <motion.div
-              className="h-full bg-lime"
+              className="h-full bg-lime shadow-[0_0_10px_rgba(204,255,0,0.8)]"
               initial={{ width: 0 }}
               animate={{ width: `${progress}%` }}
               transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -67,9 +67,9 @@ export function WorkoutList() {
             <div className="flex items-center gap-4">
               <div
                 className={cn(
-                  "flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-colors",
+                  "flex h-6 w-6 shrink-0 items-center justify-center rounded-full border transition-all duration-300",
                   exercise.completed
-                    ? "border-lime bg-lime text-black"
+                    ? "border-lime bg-lime text-black shadow-[0_0_15px_rgba(204,255,0,0.4)]"
                     : "border-muted-foreground/30 bg-transparent text-transparent",
                 )}
               >
