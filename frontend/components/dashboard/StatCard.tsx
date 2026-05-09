@@ -20,11 +20,11 @@ export function StatCard({ title, value, change, trend, icon: Icon, index }: Sta
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.4, delay: index * 0.1, ease: [0.22, 1, 0.36, 1] }}
       whileHover={{ y: -4 }}
-      className="flex flex-col justify-between rounded-2xl border border-border/50 bg-card backdrop-blur-xl p-5 shadow-lg transition-all hover:border-border hover:shadow-[0_0_25px_rgba(204,255,0,0.1)]"
+      className="flex flex-col justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition-shadow hover:shadow-md"
     >
       <div className="flex items-center justify-between">
         <span className="text-sm font-medium text-muted-foreground">{title}</span>
-        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-lime/10 text-lime shadow-[0_0_15px_rgba(204,255,0,0.2)]">
+        <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-lime/10 text-lime">
           <Icon size={16} strokeWidth={2.5} />
         </div>
       </div>

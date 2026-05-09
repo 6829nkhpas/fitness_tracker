@@ -143,8 +143,8 @@ function HeroVisual() {
     <motion.div variants={FADE_UP} className="relative w-full h-[400px] sm:h-[500px] lg:h-[700px] mt-12 lg:mt-0">
       <div className="relative w-full h-full overflow-hidden rounded-[40px] sm:rounded-[64px] bg-muted shadow-2xl">
         <Image
-          src="/hero-athlete.png"
-          alt="Athlete working out"
+          src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1470&auto=format&fit=crop"
+          alt="Aura Performance"
           fill
           priority
           className="object-cover"

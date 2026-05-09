@@ -78,12 +78,12 @@ export function CTASection() {
             Ready to crush your goals?
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-zinc-400">
-            Join thousands of athletes who are already training smarter with FitTrack.
+            Join thousands of athletes who are already training smarter with Aura.
             Start your free 14-day trial today.
           </p>
 
           <form onSubmit={handleSubmit} className="mx-auto mt-10 max-w-md">
-            <div className="relative flex items-center">
+            <div className="relative flex items-center" suppressHydrationWarning>
               <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-4">
                 <Mail className="h-5 w-5 text-zinc-500" aria-hidden="true" />
               </div>
@@ -102,8 +102,9 @@ export function CTASection() {
                   if (status === "error") setStatus("idle");
                 }}
                 disabled={status === "loading" || status === "success"}
+                data-lpignore="true"
               />
-              <div className="absolute inset-y-1 right-1 flex">
+              <div className="absolute inset-y-1 right-1 flex" suppressHydrationWarning>
                 <button
                   type="submit"
                   disabled={status === "loading" || status === "success"}

@@ -9,9 +9,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "FitTrack — Your Fitness, Quantified",
+  title: "Aura — Total Metric Domination",
   description:
-    "Track workouts, monitor progress, and crush your fitness goals with FitTrack.",
+    "Bypass traditional tracking. Initialize your biometric profile and achieve peak physiological efficiency with Aura.",
 };
 
 export default function RootLayout({
@@ -20,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} h-full antialiased dark`}>
+    <html lang="en" className={`${inter.variable} h-full antialiased dark`} suppressHydrationWarning>
       <body className="min-h-full flex flex-col">
         {children}
       </body>

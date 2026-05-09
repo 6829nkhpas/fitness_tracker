@@ -28,7 +28,7 @@ export function ActivityChart() {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-      className="flex h-full min-h-[350px] w-full flex-col rounded-2xl border border-border/50 bg-card backdrop-blur-xl p-6 shadow-lg"
+      className="flex h-full min-h-[350px] w-full flex-col rounded-2xl border border-border bg-card p-6 shadow-sm"
     >
       <div className="mb-6 flex items-center justify-between">
         <div>
@@ -58,12 +58,12 @@ export function ActivityChart() {
               content={({ active, payload }) => {
                 if (active && payload && payload.length) {
                   return (
-                    <div className="rounded-xl border border-border/50 bg-popover/90 backdrop-blur-md px-4 py-3 shadow-[0_0_20px_rgba(0,0,0,0.5)]">
-                      <p className="text-sm font-medium text-muted-foreground mb-1">
+                    <div className="rounded-lg border border-border bg-background px-3 py-2 shadow-md">
+                      <p className="text-sm font-medium text-foreground">
                         {payload[0].payload.day}
                       </p>
-                      <p className="text-lg font-display font-bold text-lime drop-shadow-[0_0_8px_rgba(204,255,0,0.5)]">
-                        {payload[0].value} <span className="text-xs font-normal text-muted-foreground drop-shadow-none">min</span>
+                      <p className="text-sm font-bold text-lime">
+                        {payload[0].value} <span className="text-xs font-normal text-muted-foreground">min</span>
                       </p>
                     </div>
                   );
@@ -75,8 +75,8 @@ export function ActivityChart() {
               {data.map((entry, index) => (
                 <Cell
                   key={`cell-${index}`}
-                  fill={entry.duration > 0 ? "var(--primary)" : "var(--muted)"}
-                  className="transition-all duration-300 hover:opacity-80 drop-shadow-[0_0_8px_rgba(204,255,0,0.3)]"
+                  fill={entry.duration > 0 ? "var(--foreground)" : "var(--muted)"}
+                  className="transition-all duration-300 hover:opacity-80"
                 />
               ))}
             </Bar>

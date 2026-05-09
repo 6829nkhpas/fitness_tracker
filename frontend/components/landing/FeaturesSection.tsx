@@ -8,33 +8,33 @@ import { cn } from "@/lib/utils";
 
 const CLASSES_DATA = [
   {
-    id: "digital",
-    title: "Digital Coaching",
-    image: "/features/workout.png",
+    id: "neural",
+    title: "Neural Integration",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=1470&auto=format&fit=crop",
     aspectRatio: "aspect-[4/5]",
     parallaxSpeed: -50,
     marginTop: "mt-0 lg:mt-32",
   },
   {
-    id: "group",
-    title: "Group Training",
-    image: "/features/community.png",
+    id: "biomechanics",
+    title: "Biometrics",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1470&auto=format&fit=crop",
     aspectRatio: "aspect-[3/4]",
     parallaxSpeed: -120,
     marginTop: "mt-0 lg:mt-64",
   },
   {
-    id: "outdoor",
-    title: "Outdoor Classes",
-    image: "/features/nutrition.png",
+    id: "spatial",
+    title: "Spatial Tracking",
+    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1470&auto=format&fit=crop",
     aspectRatio: "aspect-[4/5]",
     parallaxSpeed: -80,
     marginTop: "mt-0 lg:mt-48",
   },
   {
-    id: "personal",
-    title: "Personal Training",
-    image: "/features/analytics.png",
+    id: "quantum",
+    title: "Quantum Output",
+    image: "https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?q=80&w=1470&auto=format&fit=crop",
     aspectRatio: "aspect-[1/2]",
     parallaxSpeed: -200,
     marginTop: "mt-0",
@@ -59,7 +59,7 @@ export function FeaturesSection() {
               Classes
             </h2>
             <p className="max-w-sm text-sm font-medium text-muted-foreground lg:mb-4 lg:text-right">
-              Welcome to the dynamic and energizing world of fitness classes at FitTrack. Explore our offerings and find the class that suits your goals and lifestyle.
+              Welcome to the dynamic and energizing world of fitness classes at Aura. Explore our offerings and find the class that suits your goals and lifestyle.
             </p>
           </div>
 
@@ -85,7 +85,7 @@ export function FeaturesSection() {
 
         {/* ─── Asymmetrical Grid ─── */}
         <div className="mt-16 grid grid-cols-1 gap-12 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
-          {CLASSES_DATA.map((card, index) => {
+          {CLASSES_DATA.map((card) => {
             // eslint-disable-next-line react-hooks/rules-of-hooks
             const y = useTransform(scrollYProgress, [0, 1], [0, card.parallaxSpeed]);
 

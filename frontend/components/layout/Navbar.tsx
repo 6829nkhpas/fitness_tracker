@@ -38,55 +38,47 @@ export function Navbar() {
     <>
       <header className="fixed left-0 right-0 top-0 z-50 flex h-20 items-center justify-between border-b border-border bg-background px-4 transition-all lg:px-8">
         
-        {/* Logo */}
-        <Link href="/" className="flex shrink-0 items-center gap-2 group">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-lime transition-transform group-hover:scale-105">
-            <span className="font-display text-sm font-bold text-black leading-none">F</span>
-          </div>
-          <span className="font-display text-xl text-foreground">FitTrack</span>
-        </Link>
+        {/* Logo & Navigation Container */}
+        <div className="flex items-center gap-12">
+          {/* Logo */}
+          <Link href="/" className="flex shrink-0 items-center gap-3 group">
+            <div className="flex h-10 w-10 items-center justify-center rounded-full border border-lime/50 bg-background shadow-[0_0_15px_rgba(204,255,0,0.3)] transition-all group-hover:scale-105 group-hover:border-lime group-hover:shadow-[0_0_25px_rgba(204,255,0,0.5)]">
+              <svg width="20" height="20" viewBox="0 0 24 24" className="text-lime fill-current" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2L2 22h20L12 2zm0 4.5l6.5 13h-13L12 6.5z" />
+              </svg>
+            </div>
+            <span className="font-display text-2xl font-bold tracking-tight text-white">Aura</span>
+          </Link>
 
-        {/* Desktop Links with Liquid Underline */}
-        <nav className="hidden h-full items-center lg:flex">
-          {NAV_LINKS.map((link) => {
-            const isActive = activeLink === link;
-            return (
-              <div key={link} className="relative flex h-full items-center px-6">
-                <button
-                  onClick={() => scrollToSection(link)}
-                  className={cn(
-                    "text-sm transition-colors",
-                    isActive ? "font-semibold text-foreground" : "font-medium text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  {link}
-                </button>
-                
-                {/* Active Dip SVG */}
-                {isActive && (
-                  <motion.div
-                    layoutId="liquid-dip"
-                    className="absolute -bottom-[1px] left-1/2 z-10 -translate-x-1/2 text-border"
-                    transition={{ type: "spring", stiffness: 400, damping: 30 }}
+          {/* Desktop Links with Liquid Underline */}
+          <nav className="hidden h-full items-center lg:flex gap-8">
+            {NAV_LINKS.map((link) => {
+              const isActive = activeLink === link;
+              return (
+                <div key={link} className="relative flex h-20 items-center">
+                  <button
+                    onClick={() => scrollToSection(link)}
+                    className={cn(
+                      "text-sm uppercase tracking-widest transition-colors",
+                      isActive ? "font-bold text-lime" : "font-medium text-muted-foreground hover:text-white"
+                    )}
                   >
-                    <svg
-                      width="64"
-                      height="12"
-                      viewBox="0 0 64 12"
-                      className="fill-background stroke-accent"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        d="M 0 12 C 18 12 16 0 32 0 C 48 0 46 12 64 12"
-                        strokeWidth="1"
-                      />
-                    </svg>
-                  </motion.div>
-                )}
-              </div>
-            );
-          })}
-        </nav>
+                    {link}
+                  </button>
+                  
+                  {/* Active Neon Line */}
+                  {isActive && (
+                    <motion.div
+                      layoutId="active-nav-line"
+                      className="absolute bottom-0 left-0 right-0 h-1 bg-lime shadow-[0_0_10px_rgba(204,255,0,0.8)]"
+                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                    />
+                  )}
+                </div>
+              );
+            })}
+          </nav>
+        </div>
 
         {/* Right Side Utilities & Pill */}
         <div className="hidden shrink-0 items-center lg:flex">
