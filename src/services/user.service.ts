@@ -1,6 +1,6 @@
 import { AppError } from '../utils/AppError.js';
-import * as UserRepository from '../repositories/user.repository.js';
-import type { SafeUser } from '../repositories/user.repository.js';
+import * as UserRepository from '../../repositories/user.repository.js';
+import type { SafeUser } from '../../repositories/user.repository.js';
 import type {
   OnboardingInput,
   Step2Input,

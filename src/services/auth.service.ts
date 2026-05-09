@@ -4,8 +4,8 @@ import type { StringValue } from 'ms';
 
 import { env } from '../config/env.js';
 import { AppError } from '../utils/AppError.js';
-import * as UserRepository from '../repositories/user.repository.js';
-import type { SafeUser } from '../repositories/user.repository.js';
+import * as UserRepository from '../../repositories/user.repository.js';
+import type { SafeUser } from '../../repositories/user.repository.js';
 import type { SignupInput, LoginInput, AuthPayload } from '../types/auth.types.js';
 
 // ── Constants ──────────────────────────────────────────────────────
