@@ -14,12 +14,27 @@ validateEnv();
 // ── Express app ────────────────────────────────────────────────────
 const app = express();
 
-// ── Security Middleware ────────────────────────────────────────────
-// eslint-disable-next-next-line @typescript-eslint/no-explicit-any
-app.use((helmet as any)());
+// ── CORS Middleware (must be BEFORE helmet) ────────────────────────
+// Allows the frontend (on a different Vercel domain) to make
+// authenticated requests to this API.
+const allowedOrigins = [
+  'http://localhost:3000',
+  'https://fitness-tracker-mu-smoky.vercel.app',
+  // Vercel preview deployments use dynamic subdomains
+  /\.vercel\.app$/,
+];
 
-// ── CORS Middleware ────────────────────────────────────────────────
-app.use(cors());
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+}));
+
+// ── Security Middleware ────────────────────────────────────────────
+app.use((helmet as any)({
+  crossOriginResourcePolicy: { policy: 'cross-origin' },
+}));
 
 // ── Body Parser Middleware ─────────────────────────────────────────
 app.use(express.json());
