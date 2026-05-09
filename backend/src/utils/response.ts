@@ -1,5 +1,5 @@
 import type { Response } from 'express';
-import type { ApiResponse } from '../../types/api.types.js';
+import type { ApiResponse } from '../types/api.types.js';
 
 /**
  * Send a standardized success response.

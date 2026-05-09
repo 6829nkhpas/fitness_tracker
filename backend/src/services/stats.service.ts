@@ -1,7 +1,7 @@
 import type { DashboardStats } from '../../prisma/generated/prisma/client.js';
 
-import * as StatsRepository from '../../repositories/stats.repository.js';
-import * as UserRepository from '../../repositories/user.repository.js';
+import * as StatsRepository from '../repositories/stats.repository.js';
+import * as UserRepository from '../repositories/user.repository.js';
 import { AppError } from '../utils/AppError.js';
 import type {
   DashboardOverview,
