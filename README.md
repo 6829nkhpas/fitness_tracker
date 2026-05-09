@@ -9,7 +9,7 @@
 <p align="center">
   <a href="https://fitness-tracker-mu-smoky.vercel.app/health"><strong>🔗 Backend API (Live)</strong></a>
   &nbsp;•&nbsp;
-  <a href="#"><strong>🌐 Frontend (Live)</strong></a>
+  <a href="https://fitness-tracker-tjf6-git-main-namans-projects-194ade92.vercel.app"><strong>🌐 Frontend (Live)</strong></a>
 </p>
 
 ---
@@ -32,7 +32,7 @@
 | Service    | URL                                                                |
 |------------|--------------------------------------------------------------------|
 | **Backend API**  | [`https://fitness-tracker-mu-smoky.vercel.app`](https://fitness-tracker-mu-smoky.vercel.app/health) |
-| **Frontend App** | *Set after frontend Vercel deployment*                             |
+| **Frontend App** | [`https://fitness-tracker-tjf6-git-main-namans-projects-194ade92.vercel.app`](https://fitness-tracker-tjf6-git-main-namans-projects-194ade92.vercel.app) |
 
 Both services are deployed on **Vercel** — the backend runs as a serverless function, and the frontend is a statically optimized Next.js app.
 
