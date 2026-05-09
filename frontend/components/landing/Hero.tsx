@@ -109,7 +109,7 @@ function Headline() {
     <div className="flex flex-col gap-2 sm:gap-4 w-full">
       <motion.div variants={FADE_UP} className="flex items-center flex-wrap gap-4">
         <h1 className="font-display text-5xl sm:text-7xl lg:text-[7.5rem] tracking-[-0.04em] text-white font-bold leading-none drop-shadow-[0_0_30px_rgba(255,255,255,0.2)]">
-          Today&apos;s workout
+          Personalized workout
         </h1>
         {/* <div className="relative h-14 w-32 sm:h-20 sm:w-48 lg:h-[100px] lg:w-64 overflow-hidden rounded-full bg-muted">
           <Image
